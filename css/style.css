@@ -1,0 +1,134 @@
+/* GLOPAL SYLING */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+ul{
+    list-style: none;
+}
+
+
+body
+{
+    background-color: #0d0d0d !important;
+    font-family: Segoe UI Light;
+}
+
+:root {
+    --main-color: #000;
+    --secondary-color :#fff;
+}
+::selection
+{
+    background-color: #fff;
+    color: var(--main-color);
+}
+
+
+/* GLOPAL SYLING */
+
+
+
+/* Nav */
+.outer-nav{
+    width: fit-content;
+   z-index: 999;
+   left : -250px
+}
+
+
+.nav-menu{
+    width: 60px;
+    background-color: #f8f6f6;
+   
+   
+}
+.nav-menu .nav-logo{
+    padding: 25px 0;
+}
+
+.nav-menu .nav-logo img {
+    height: 48px;
+}
+
+
+.nav-menu .nav-toggle-icon{
+    font-size: 25px;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.nav-menu .nav-social{
+    padding: 25px 0;
+}
+
+.nav-menu .nav-social a{
+    color: #000;
+}
+
+/* Nav */
+
+/* Side Nav */
+.side-nav{
+    background-color: #000;
+    width: 250px;
+    padding: 0 30px;
+    color: #fff;
+    
+  
+}
+
+
+.side-nav .menu ul{
+    padding: 0;
+}
+.side-nav .menu ul li {
+    padding-top: 25px;
+    cursor: pointer;
+}
+
+.side-nav .footer a{
+    color: #fff ;
+}
+/* Side Nav */
+
+
+
+
+
+/* START FILD CARD */
+
+
+.films-container .film-card  .overlay{
+    background-color: rgba(0,0,0,0.6);
+    padding: 20px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+
+.film-card  .overlay h1
+{
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: center;
+    user-select: text;
+}
+
+.film-card  .overlay .overview{
+    text-overflow: ellipsis;
+    max-width: 60ch !important;
+}
+
+
+.overlay .vote{
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    border: 2px solid rgb(118, 255, 118);
+    padding: 10px;
+}

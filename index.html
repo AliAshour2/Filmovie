@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soup</title>
+
+
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- Bootstrap -->
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- CSS -->
+
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="css/all.min.css" />
+    <!-- Fontawesome -->
+
+    <!-- FAVICON -->
+    <link rel="shortcut icon" href="assets/images/logo.png" type="image/x-icon" />
+    <!-- FAVICON -->
+
+    <!-- AOS -->
+    <link rel="stylesheet" href="css/aos.css" />
+    <!-- AOS -->
+
+    <!-- animate css  cdn-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- animate css  cdn-->
+
+</head>
+
+<body>
+    <div class="outer-nav d-flex flex-row  h-100 position-fixed ">
+
+
+        <!-- START SIDE NAV -->
+        <div class="side-nav    h-100 d-flex flex-column justify-content-between">
+            <div class="menu">
+                <ul>
+                    <li data-aos="fade-up-right" data-aos-delay="100">
+                        <a attr="movie/now_playing">Now playing</a>
+                    </li>
+                    <li data-aos="fade-up-right" data-aos-delay="150">
+                        <a attr="movie/popular">Popular</a>
+                    </li>
+                    <li data-aos="fade-up-right" data-aos-delay="200">
+                        <a id="topRated" attr="movie/top_rated">Top Rated</a>
+                    </li>
+                    <li data-aos="fade-up-right" data-aos-delay="250">
+                        <a attr="trending">Trending</a>
+                    </li>
+                    <li data-aos="fade-up-right" data-aos-delay="300">
+                        <a attr="movie/upcoming">Upcoming</a>
+                    </li>
+                    <li data-aos="fade-up-right" data-aos-delay="350">
+                        <a section="#contact">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer">
+                <div class="rights-social d-flex gap-3">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-solid fa-globe"></i></a>
+                </div>
+                <p class="pt-3">
+                    Copyright © 2022 All Rights Reserved. <br />Created by
+                    <a href="https://github.com/aliashour2" class="link-danger fw-bold" target="_blank">Ali</a>
+                </p>
+            </div>
+        </div>
+
+
+        <!-- START NAV MENU -->
+        <div class="nav-menu d-flex flex-column justify-content-between h-100 text-center ">
+            <div class="nav-logo">
+                <img src="assets/images/logo.png" alt="logo" />
+            </div>
+
+            <div class="nav-toggle-icon" id="nav-toggle-icon">
+                <i class="toggle-icon fa-solid fa-bars"></i>
+            </div>
+
+            <div class="nav-social d-flex gap-1 flex-column">
+                <a href="#"><i class="fa-solid fa-globe"></i></a>
+                <a href="#"><i class="fa-solid fa-share-nodes"></i></a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="sectoin hero py-5 container" id="hero">
+        <input type="search" placeholder="Search"
+            class="form-control w-50 mx-auto rounded-pill text bg-transparent text-white border-white shadow-none px-3">
+
+        <!-- FILDS CARDS -->
+        <div id="films-container" class="films-container row g-4 mt-3 text-white ">
+
+            <div class="col-sm-12 col-md-6 col-lg-4 ">
+                <div class="film-card overflow-hidden rounded-1">
+                    <div class="img-holder position-relative">
+                        <img src="assets/images/images2.jpg" alt="" class="img-fluid">
+                        <div class="overlay position-absolute overflow-hidden">
+                            <h1 class="text-center animate__fadeInDown">hello</h1>
+                            <p class="overview animate__animated animate__fadeInRight ">One man’s campaign for vengeance takes on national stakes after he is revealed to be a
+                                former operative of a powerful and clandestine organization known as Beekeepers.</p>
+                            <p class=" animate__animated animate__fadeInLeft">Relase Date : <span class="">2002/2/5</span></p>
+                            <h3 class=" animate__animated animate__fadeIn vote d-flex align-items-center justify-content-center rounded-circle">
+                                45
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+
+
+
+
+        </div>
+    </div>
+
+
+
+
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/all.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
