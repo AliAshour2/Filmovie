@@ -110,7 +110,10 @@ body
     bottom: 0;
 }
 
-
+.film-card{
+    width: 90%;
+    margin: auto;
+}
 .film-card  .overlay h1
 {
     font-size: 1.2rem;
