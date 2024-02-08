@@ -138,12 +138,13 @@ body
 
 .overlay {
     visibility: hidden;
-    transition: 0.3;
+    transition: 0.5s;
 }
 
 
 .film-card:hover  .overlay{
     visibility: visible;
+   
 }
 .film-card:hover .img-holder{
     
