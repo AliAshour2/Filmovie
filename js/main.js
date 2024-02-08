@@ -90,9 +90,9 @@ $(document).ready(function () {
 
 
 
-  // *********  FIX OVERVIEW 
+ 
   
-  // >>>>>>>>> over view
+ 
 
   // ******** DISPLAY STARTS *********
   function checkMovieVote(value) {
@@ -114,9 +114,6 @@ $(document).ready(function () {
 
     return stars;
 }
-
-
-
   // >>>> END DISPLAY STARS <<<<
 
   
@@ -157,6 +154,21 @@ $(document).ready(function () {
   });
 
 
+
+  $(window).scroll(function() {
+    if ($(this).scrollTop() > 200) {
+      $('#scroll-up').addClass('show-scroll');
+    } else {
+      $('#scroll-up').removeClass('show-scroll');
+    }
+  });
+
+  $('#scroll-up').click(function() {
+    $('html, body').animate({
+      scrollTop: 0
+    }, 800);
+    return false;
+  });
   
 });
 
