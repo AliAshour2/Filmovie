@@ -41,7 +41,7 @@ $(document).ready(function () {
     }
 }
 
-$(document).ready(function() {
+
     $(".side-nav .menu ul li a").click(function () { 
         const term = $(this).attr('attr'); // Get the 'attr' attribute value of the clicked element
         fetchData(term); // Call fetchData again with the new term value
@@ -49,7 +49,7 @@ $(document).ready(function() {
 
     // Fetch initial data
     fetchData();
-});
+
 
  // END FeTCH
 
