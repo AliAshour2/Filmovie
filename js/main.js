@@ -5,7 +5,7 @@ $(document).ready(function () {
   // START AOS
   AOS.init();
 
-  // START NAVBAR
+  // ****************** START NAVBAR ********************
   $(".nav-toggle-icon ").click(function () {
     let sideNavWidth = $(".side-nav").outerWidth();
     if ($(".outer-nav").css("left") == "0px") {
@@ -13,17 +13,18 @@ $(document).ready(function () {
       $(".toggle-icon")
         .addClass("fa-solid fa-bars")
         .removeClass("fa-solid fa-xmark");
+        navClose()
     } else {
       $(".outer-nav").animate({ left: 0 }, 500);
       $(".toggle-icon")
         .removeClass("fa-solid fa-bars")
         .addClass("fa-solid fa-xmark");
+        navOpen();
     }
   });
-  //   END NAVBAR
+  //   ================== END NAVBAR ====================
 
-  // START FETCH DATA
-
+  // *************** START FETCH DATA ****************
   async function fetchData(term = "trending/all/day") {
     const baseUrl = `https://api.themoviedb.org/3/${term}?api_key=`;
     const apiKey = "5410c35b93d50687eecd81b2f5b9a676";
@@ -41,20 +42,23 @@ $(document).ready(function () {
         throw error;
     }
 }
+// ================== END FETCH FUNCTION ===================
 
 
+    // ****************** MAKE IF USER CKICK IN NAV CHNAGE THE DIPLAY ****************************
     $(".side-nav .menu ul li a").click(function () { 
         const term = $(this).attr('attr'); // Get the 'attr' attribute value of the clicked element
         fetchData(term); // Call fetchData again with the new term value
         window.scrollTo({ top: 0 });
     });
+    // ===================== MAKE IF USER CKICK IN NAV CHNAGE THE DIPLAY ============================
 
     // Fetch initial data
     fetchData();
- // END FeTCH
+ 
 
 
-  // START DISPLAY
+  // ****************** START DISPLAY *******************
   function display(arr){
     let imgPath = 'https://image.tmdb.org/t/p/w500';
     let itemHolder = ``;
@@ -94,7 +98,7 @@ $(document).ready(function () {
     );
    
   }
-  // END DISPLAY
+  // ==================== END DISPLAY =====================
 
 
 
@@ -174,6 +178,16 @@ $(document).ready(function () {
   });
 
 
+  function navOpen()
+  {
+    $(".side-nav .menu li").addClass("animate__fadeInUp")
+    .removeClass("animate__fadeInDown").end()
+  }
+  function navClose()
+  {
+    $(".side-nav .menu li").addClass("animate__fadeInDown")
+    .removeClass("animate__fadeInUp").end()
+  }
 
   
 function cardHoverIn() {
