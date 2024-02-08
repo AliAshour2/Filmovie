@@ -49,8 +49,6 @@ $(document).ready(function () {
 
     // Fetch initial data
     fetchData();
-
-
  // END FeTCH
 
 
@@ -119,55 +117,50 @@ $(document).ready(function () {
   
   // Fetch TOP RATED MOVIES
   // =========>>>>>>>>>>> i just handle it above there is no need for this function
-  async function fetchTopRatedMovies() {
-    const options = {
-      method: 'GET',
-      headers: {
-        accept: 'application/json',
-        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1NDEwYzM1YjkzZDUwNjg3ZWVjZDgxYjJmNWI5YTY3NiIsInN1YiI6IjY1YzI5Yjk2Y2I3NWQxMDE3YzZiYzA1MCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.He1kcrVx_0rih9FCg7-vFqzNbvIKOeP1sjvBcA03-zI'
-      }
-    };
+  // async function fetchTopRatedMovies() {
+  //   const options = {
+  //     method: 'GET',
+  //     headers: {
+  //       accept: 'application/json',
+  //       Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1NDEwYzM1YjkzZDUwNjg3ZWVjZDgxYjJmNWI5YTY3NiIsInN1YiI6IjY1YzI5Yjk2Y2I3NWQxMDE3YzZiYzA1MCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.He1kcrVx_0rih9FCg7-vFqzNbvIKOeP1sjvBcA03-zI'
+  //     }
+  //   };
   
-    try {
-      const response = await fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', options);
-      const data = await response.json();
-      console.log( data);
+  //   try {
+  //     const response = await fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', options);
+  //     const data = await response.json();
+  //     console.log( data);
       
       
-      return data.results;
-    } catch (err) {
-      console.error( "Error from top rated fetch"+err);
-      return err;
-    }
+  //     return data.results;
+  //   } catch (err) {
+  //     console.error( "Error from top rated fetch"+err);
+  //     return err;
+  //   }
     
-  }
-  fetchTopRatedMovies();
-  // END FETCH TOP RATED
+  // }
+  // fetchTopRatedMovies();
+  //****************** */ END FETCH TOP RATED
 
-  $("#topRated").click(function (event) {
-    event.preventDefault(); // Prevent default anchor behavior
-    fetchTopRatedMovies().then(topRatedMovies => {
-      display(topRatedMovies);
-    }).catch(error => {
-      console.error("Error fetching top rated movies:", error);
-    });
-  });
+  // $("#topRated").click(function (event) {
+  //   event.preventDefault(); // Prevent default anchor behavior
+  //   fetchTopRatedMovies().then(topRatedMovies => {
+  //     display(topRatedMovies);
+  //   }).catch(error => {
+  //     console.error("Error fetching top rated movies:", error);
+  //   });
+  // });
 
 
   
   $(window).scroll(function() {
-    if ($(this).scrollTop() > 200) {
-      $('#scroll-up').addClass('show-scroll');
+    const scrollUp = $("#scroll-up");
+    // When the scroll is higher than 350 viewport height, add the show-scroll class to the a tag with the scrollup class
+    if ($(this).scrollTop() >= 350) {
+      scrollUp.addClass("show-scroll");
     } else {
-      $('#scroll-up').removeClass('show-scroll');
+      scrollUp.removeClass("show-scroll");
     }
-  });
-
-  $('#scroll-up').click(function() {
-    $('html, body').animate({
-      scrollTop: 0
-    }, 800);
-    return false;
   });
   
 });
