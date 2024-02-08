@@ -136,6 +136,25 @@ body
     padding: 10px;
 }
 
+.overlay {
+    visibility: hidden;
+    transition: 0.3;
+}
+
+
+.film-card:hover  .overlay{
+    visibility: visible;
+}
+.film-card:hover .img-holder{
+    
+}
+.film-card:hover .img-holder img{
+    
+    transition: 0.9s;
+    transition-timing-function: ease-in-out;
+    filter: blur(0.5rem);
+    scale: 1.2;
+}
 
 
 
