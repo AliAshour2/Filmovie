@@ -96,23 +96,26 @@ $(document).ready(function () {
 
   // ******** DISPLAY STARTS *********
   function checkMovieVote(value) {
+    const maxRating = 10; // Maximum rating
+    const numStars = 5; // Total number of stars to display
+    const percentage = (value / maxRating) * 100; // Calculate the percentage of the rating
+
     let stars = '';
-    const numStars = Math.min(5, Math.floor(value));
 
     for (let i = 0; i < numStars; i++) {
-        stars += `<i class="fa-solid fa-star text-warning fs-6"></i>`;
-    }
-
-    if (value % 1 !== 0 && numStars < 5) {
-        stars += `<i class="fa-regular fa-star-half-stroke text-warning fs-6"></i>`;
-    }
-
-    if (stars === '') {
-        stars = `<i class="fa-solid fa-star text-muted fs-6"></i>`; 
+        if (percentage >= (i + 0.5) * (100 / numStars)) {
+            stars += `<i class="fa-solid fa-star text-warning fs-6"></i>`;
+        } else if (percentage >= (i + 0.25) * (100 / numStars)) {
+            stars += `<i class="fa-regular fa-star-half-stroke text-warning fs-6"></i>`;
+        } else {
+            stars += `<i class="fa-solid fa-star text-muted fs-6"></i>`;
+        }
     }
 
     return stars;
 }
+
+
 
   // >>>> END DISPLAY STARS <<<<
 
