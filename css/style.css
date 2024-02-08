@@ -152,6 +152,7 @@ body
 
 .film-card:hover .img-holder img{
     transition: 0.9 ease-in-out;
+
 }
 .film-card:hover .img-holder img.animate{
     
