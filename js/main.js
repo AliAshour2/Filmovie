@@ -1,3 +1,4 @@
+
 const filmsContinaer = document.getElementById("films-container");
 let stars ;
 $(document).ready(function () {
@@ -61,16 +62,16 @@ $(document).ready(function () {
 
         itemHolder+=
         `
-        <div class="col-sm-12 col-md-6 col-lg-4 ">
+        <div class="col-sm-12 col-md-6 col-lg-4 animate__animated ">
                     <div class="film-card overflow-hidden rounded-3">
                         <div class="img-holder position-relative">
                             <img src=${imgPath+arr[i].poster_path} alt="" class="img-fluid">
                             <div class="overlay position-absolute overflow-hidden">
-                                <h1 class="text-center animate__fadeInDown">${arr[i].title}</h1>
-                                <p class=" animate__animated animate__fadeInRight">${overview}</p>
-                                <p class=" animate__animated animate__fadeInLeft">Relase Date : <span class="">${arr[i].release_date}</span></p>
+                                <h1 class="title text-center  ">${arr[i].title}</h1>
+                                <p class="desc animate__animated ">${overview}</p>
+                                <p class="date animate__animated ">Relase Date : <span class="">${arr[i].release_date}</span></p>
                                 <h3>${checkMovieVote(arr[i].vote_average )}</h3>
-                                <h3 class=" animate__animated animate__fadeIn vote d-flex align-items-center justify-content-center rounded-circle">
+                                <h3 class="rate animate__animated  vote d-flex align-items-center justify-content-center rounded-circle">
                                 ${parseFloat((arr[i].vote_average).toFixed(1))}
                                 </h3>
                             </div>
@@ -81,7 +82,15 @@ $(document).ready(function () {
         
     }
 
+
     filmsContinaer.innerHTML = itemHolder ;
+    $(".film-card").mouseenter(
+      cardHoverIn
+    );
+
+    $(".film-card").mouseleave(
+      cardHoverOut
+    );
    
   }
   // END DISPLAY
@@ -167,3 +176,38 @@ $(document).ready(function () {
 
 
 
+function cardHoverIn() {
+  $(this).find('.overlay')
+    .css({"opacity": "1", "visibility": "visible"})
+    .find('.title')
+    .removeClass('animate__slideOutLeft')
+    .addClass('animate__fadeInDown animate__delay-0s')
+    .end()
+    .find('.desc')
+    .removeClass('animate__slideOutLeft')
+    .addClass('animate__fadeIn animate__delay-0.5s')
+    .end()
+    .find('.date, .rate')
+    .removeClass('animate__slideOutLeft')
+    .addClass('animate__fadeInUp animate__delay-0s');
+
+  $(this).find('.film-card .img-holder img').addClass("animate");
+}
+
+ function cardHoverOut() {
+  $(this).find('.overlay')
+    .css({"opacity": "0", "visibility": "hidden"})
+    .find('.title')
+    .removeClass('animate__fadeInDown animate__delay-0s')
+    .addClass('animate__slideOutLeft')
+    .end()
+    .find('.desc')
+    .removeClass('animate__fadeIn')
+    .addClass('animate__slideOutLeft')
+    .end()
+    .find('.date, .rate')
+    .removeClass('animate__fadeInUp animate__delay-0s')
+    .addClass('animate__slideOutLeft');
+
+  $('.cardImage img').removeClass("animate");
+}
