@@ -46,6 +46,7 @@ $(document).ready(function () {
     $(".side-nav .menu ul li a").click(function () { 
         const term = $(this).attr('attr'); // Get the 'attr' attribute value of the clicked element
         fetchData(term); // Call fetchData again with the new term value
+        window.scrollTo({ top: 0 });
     });
 
     // Fetch initial data
@@ -171,11 +172,10 @@ $(document).ready(function () {
       scrollUp.removeClass("show-scroll");
     }
   });
+
+
+
   
-});
-
-
-
 function cardHoverIn() {
   $(this).find('.overlay')
     .css({"opacity": "1", "visibility": "visible"})
@@ -211,3 +211,8 @@ function cardHoverIn() {
 
   $('.cardImage img').removeClass("animate");
 }
+
+  
+});
+
+
