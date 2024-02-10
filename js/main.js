@@ -4,6 +4,10 @@ $(document).ready(function () {
   // START AOS
   AOS.init();
 
+  
+  $(".loading").fadeOut(1000 , ()=>{
+    
+  });
   // ****************** START NAVBAR ********************
   $(".nav-toggle-icon ").click(function () {
     let sideNavWidth = $(".side-nav").outerWidth();
@@ -35,6 +39,7 @@ $(document).ready(function () {
       let data = await response.json();
       console.log(data.results);
       display(data.results);
+      
       return data;
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -70,17 +75,17 @@ $(document).ready(function () {
                         <div class="img-holder position-relative">
                             <img src=${
                               imgPath + arr[i].poster_path
-                            } alt="" class="img-fluid">
+                            } alt="" class="img-fluid placeholder-glow">
                             <div class="overlay position-absolute overflow-hidden">
                                 <h1 class="title text-center  ">${
                                   arr[i].title
                                 }</h1>
-                                <p class="desc animate__animated ">${overview}</p>
-                                <p class="date animate__animated ">Relase Date : <span class="">${
+                                <p class="placeholder-glow desc animate__animated ">${overview}</p>
+                                <p class="placeholder-glow date animate__animated ">Relase Date : <span class="">${
                                   arr[i].release_date
                                 }</span></p>
-                                <h3>${checkMovieVote(arr[i].vote_average)}</h3>
-                                <h3 class="rate animate__animated  vote d-flex align-items-center justify-content-center rounded-circle">
+                                <h3 class="">${checkMovieVote(arr[i].vote_average)}</h3>
+                                <h3 class="placeholder-glow rate animate__animated  vote d-flex align-items-center justify-content-center rounded-circle">
                                 ${parseFloat(arr[i].vote_average.toFixed(1))}
                                 </h3>
                             </div>
@@ -249,4 +254,7 @@ $("#search").on("keyup", function (event) {
       throw error;
     }
   }
+
+
+  
 });

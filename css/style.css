@@ -14,6 +14,7 @@ body
 {
     background-color: #0d0d0d !important;
     font-family: Segoe UI Light;
+    
 }
 
 :root {
@@ -205,5 +206,21 @@ body
     bottom: 5rem;
   }
 
+
+  /* laoding */
+  .loading{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #0d0d0d;
+    color: #fff;
+    font-size: 32px;
+    z-index: 9999;
+  }
 
   /* END SCROLL UP */
